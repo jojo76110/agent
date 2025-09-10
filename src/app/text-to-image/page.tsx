@@ -21,7 +21,7 @@ export default function TextToImagePage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt, model, apiKey: "YOUR_API_KEY" }), // Replace with actual API key from context
+        body: JSON.stringify({ prompt, model }), // API key is handled by the backend
       });
 
       const data = await response.json();
