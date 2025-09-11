@@ -4,16 +4,14 @@ export async function POST(request: Request) {
   try {
     const { prompt, model } = await request.json();
 
-    if (!prompt || !apiKey || !model) {
+    if (!prompt || !model) {
       return NextResponse.json(
-        { error: "Missing required parameters: prompt, apiKey, model" },
+        { error: "Missing required parameters: prompt, model" },
         { status: 400 }
       );
     }
 
-    // This is a simplified example. In a real application, you would use the API key
-    // to authenticate with the AI service (e.g., Google, OpenAI).
-    const apiKey = process.env.GOOGLE_API_KEY; // Example: reading from environment variables
+    const apiKey = process.env.GOOGLE_API_KEY;
 
     if (!apiKey) {
       return NextResponse.json(
@@ -22,7 +20,7 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log(`Generating image with prompt: "${prompt}" using ${model}`);
+    console.log(`Generating image with prompt: \"${prompt}\" using ${model}`);
 
     // Simulate a real API call. Replace this with your actual image generation logic.
     // For this example, we'll return a dynamic image from a placeholder service.
