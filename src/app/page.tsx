@@ -41,6 +41,16 @@ export default function Home() {
             Go to Tool &rarr;
           </Link>
         </div>
+        <div className="p-6 border rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold mb-2">文案/聊天</h2>
+          <p className="mb-4">与 AI 进行对话或生成文本内容。</p>
+          <Link
+            href="/chat"
+            className="text-indigo-600 hover:text-indigo-800"
+          >
+            Go to Chat &rarr;
+          </Link>
+        </div>
       </div>
     </main>
   );
